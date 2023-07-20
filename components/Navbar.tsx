@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className='flex justify-center items-center gap-2'>
           <Link href="https://github.com/asmraihan" >   <Github size={20} /></Link>
           <Link href="https://www.linkedin.com/in/asmraihan/" >   <Linkedin size={20} /></Link>
-          <Link href="https://www.asmraihan.web.app" >   <ExternalLink size={20} /></Link>
+          <Link href="https://asmraihan.web.app" >   <ExternalLink size={20} /></Link>
 
         </div>
 

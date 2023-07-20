@@ -54,10 +54,10 @@ export default function Home() {
             strokeColor="black"
           />
 
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-between items-center ">
             <Button
               type="button"
-              variant={"ghost"}
+              variant={"outline"}
               onClick={() => {
 
                 canvasRef.current?.undo()
@@ -67,7 +67,7 @@ export default function Home() {
             </Button>
             <Button
               type="button"
-              variant={"ghost"}
+              variant={"outline"}
               onClick={() => {
 
                 canvasRef.current?.redo()
@@ -78,7 +78,7 @@ export default function Home() {
 
             <Button
               type="button"
-              variant={"ghost"}
+              variant={"outline"}
               onClick={() => {
                 canvasRef.current?.clearCanvas();
 
