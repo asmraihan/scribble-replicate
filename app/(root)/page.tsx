@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pt-8">
-      <div className="container mx-auto flex gap-8 ">
+      <div className="container mx-auto lg:flex gap-8 ">
         <form
           className="flex flex-col gap-2 w-2/6"
           onSubmit={handleSubmit(async (formData) => {
@@ -44,7 +44,7 @@ export default function Home() {
         >
           <Label htmlFor="prompt">Prompt (Put your thought)</Label>
           <Input id="prompt" {...register("prompt", { required: true })} />
-          {errors.prompt && <span>This field is required</span>}
+          {errors.prompt && <span className="text-orange-500">This field is required</span>}
 
           <Label className="mt-4">Canvas (Put your imagination)</Label>
           <ReactSketchCanvas
@@ -52,6 +52,7 @@ export default function Home() {
             style={{ width: 400, height: 400 }}
             strokeWidth={4}
             strokeColor="black"
+            // className="w-1/2"
           />
 
           <div className="flex justify-between items-center ">
@@ -91,9 +92,9 @@ export default function Home() {
           <Button type="submit">Submit</Button>
         </form>
 
-        <section>
+        <section className=" mt-10 lg:mt-0">
           <h2 className="mb-10">Recent Sketches</h2>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 mx-auto gap-4">
             {sortedSketches.map((sketch) => (
               sketch.result && (
                 <Image
