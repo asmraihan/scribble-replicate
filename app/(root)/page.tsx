@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Redo2, Undo2, X } from "lucide-react";
+import { Loader2, Redo2, Undo2, X } from "lucide-react";
 import Image from "next/image";
 
 
@@ -18,11 +18,12 @@ export default function Home() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<{
     prompt: string;
   }>();
 
+  console.log(isSubmitting)
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
 
   const sortedSketches = (sketchesQuery ?? []).sort((a, b) => {
@@ -52,7 +53,7 @@ export default function Home() {
             style={{ width: 400, height: 400 }}
             strokeWidth={4}
             strokeColor="black"
-            // className="w-1/2"
+          // className="w-1/2"
           />
 
           <div className="flex justify-between items-center ">
@@ -89,7 +90,12 @@ export default function Home() {
             </Button>
           </div>
 
-          <Button type="submit">Submit</Button>
+
+
+          <Button disabled={isSubmitting} type="submit">
+          
+            Submit
+          </Button>
         </form>
 
         <section className=" mt-10 lg:mt-0">

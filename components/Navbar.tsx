@@ -3,13 +3,14 @@ import { ExternalLink, Globe, LinkedinIcon, PersonStanding, WholeWord, WholeWord
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import { ThemeToggle } from './layouts/theme-toggle'
 
 const Navbar = () => {
   return (
     <div className="border-b py-4">
       <div className="container mx-auto flex justify-between">
         <div>
-          <Link href="/"> Scribble </Link>
+          <Link className='text-2xl font-semibold' href="/"> Scribble </Link>
         </div>
         {/* <nav className="flex gap-4">
             <Link href="/">Generate Art</Link>
@@ -20,8 +21,8 @@ const Navbar = () => {
           <Link href="https://www.linkedin.com/in/asmraihan/" >   <Linkedin size={20} /></Link>
           <Link href="https://asmraihan.web.app" >   <ExternalLink size={20} /></Link>
 
+        <ThemeToggle />
         </div>
-
       </div>
     </div>
   )
